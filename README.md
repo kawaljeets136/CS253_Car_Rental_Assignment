@@ -1,6 +1,14 @@
 # CS253_Car_Rental_Assignment
 **When the code is executed on terminal**
 
+**Customer and Employee Database**
+First column: ID, Second column: Name, Third column: Password, Fourth column: number_of_currently_rented_cars, Fifth column: fine, 
+Sixth column: customer_record, Seventh column: car_rent_limit
+
+**Car Database**
+First column: Model, Second column: Condition, Third column: Is_Rented(0 if car is rented by someone else 1), Fourth column: Renter_ID,
+Fifth column: Rent_Price, Sixth column: Due_Date_of_Rent
+
 It will ask the identity(Manager/Employee/Customer)
 
 **If You are Manager[There is only one manager] Userid = Indranilshah, password = CS253**
