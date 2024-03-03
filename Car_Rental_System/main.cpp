@@ -1149,14 +1149,16 @@ update_menu:
                 string rented_cars;
                 string fine;
                 string record;
-                string prev_car_limit;
+                string temp = "";
                 int car_limit;
                 getline(inputString, name, ',');
                 getline(inputString, password, ',');
                 getline(inputString, rented_cars, ',');
                 getline(inputString, fine, ',');
                 getline(inputString, record, ',');
-                getline(inputString, prev_car_limit, '\n');
+                getline(inputString, temp, '\n');
+                car_limit = stoi(temp);
+                temp = "";
                 char choice;
                 char ch_id;
                 std::cout << "Do you want to change ID?(y/n): ";
@@ -1226,23 +1228,23 @@ update_menu:
                         std::cout << endl;
                         goto update_menu;
                     }
-                }
-                if (car_limit == 1)
-                    record = "unsatisfactory";
-                else if (car_limit == 2)
-                    record = "below_average";
-                else if (car_limit == 3)
-                    record = "average";
-                else if (car_limit == 4)
-                    record = "satisfactory";
-                else if (car_limit == 5)
-                    record = "excellent";
-                else
-                {
-                    std::cout << "\nINVALID INPUT\n\n";
-                    system("pause");
-                    std::cout << endl;
-                    goto update_menu;
+                    if (car_limit == 1)
+                        record = "unsatisfactory";
+                    else if (car_limit == 2)
+                        record = "below_average";
+                    else if (car_limit == 3)
+                        record = "average";
+                    else if (car_limit == 4)
+                        record = "satisfactory";
+                    else if (car_limit == 5)
+                        record = "excellent";
+                    else
+                    {
+                        std::cout << "\nINVALID INPUT\n\n";
+                        system("pause");
+                        std::cout << endl;
+                        goto update_menu;
+                    }
                 }
 
                 line = id + "," + name + "," + password + "," + rented_cars + "," + fine + "," + record + "," + to_string(car_limit);
